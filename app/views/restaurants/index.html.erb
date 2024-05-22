@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<%= link_to "Check the top restaurants in your area!",
+top_restaurants_path,
+class: "btn btn-outline-secondary" %>
+
+<%= simple_form_for '', method: :get do |f| %>
+  <%= f.input :rating, label: false %>
+  <%= f.submit "FILTER!", name: nil %>
+<% end %>
+
+<h1>Restaurants</h1>
+
+<div id="restaurants">
+  <% @restaurants.each do |restaurant| %>
+    <%= render restaurant %>
+    <p>
+      <%= link_to "Show this restaurant", restaurant %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New restaurant", new_restaurant_path %>

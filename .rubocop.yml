@@ -1,0 +1,39 @@
+---
+Layout/SpaceInsidePercentLiteralDelimiters:
+  Exclude:
+    - 'Gemfile'
+
+Layout/TrailingEmptyLines:
+  Exclude:
+    - 'Gemfile'
+
+Metrics/CyclomaticComplexity:
+  Max: 9
+
+Metrics/MethodLength:
+  Max: 13
+
+Metrics/PerceivedComplexity:
+  Max: 9
+
+Style/Documentation:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/GlobalStdStream:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/SymbolArray:
+  EnforcedStyle: percent
+  MinSize: 10
+
+Layout/LineLength:
+  Max: 100

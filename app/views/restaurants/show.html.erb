@@ -1,0 +1,31 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @restaurant %>
+
+<h3>User reviews
+  <%= link_to "Add new",
+  new_restaurant_review_path(@restaurant),
+  class: "btn btn-primary btn-sm" %></h3>
+
+<ul>
+  <% @restaurant.reviews.order(created_at: :desc).each do |review| %>
+    <li><%= review.created_at.to_formatted_s(:short) %>
+      –
+      <%= review.content %><%= link_to "DESTROY!",
+      review_path(review),
+      data: {
+        turbo_method: :delete,
+      },
+      class: "text-danger" %></li>
+  <% end %>
+</ul>
+
+<div>
+  <%= link_to "Edit this restaurant", edit_restaurant_path(@restaurant) %>
+  |
+  <%= link_to "Back to restaurants", restaurants_path %>
+  |
+  <%= link_to "Chef defails", chef_restaurant_path(@restaurant) %>
+
+  <%= button_to "Destroy this restaurant", @restaurant, method: :delete %>
+</div>
